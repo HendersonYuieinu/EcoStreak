@@ -6,15 +6,13 @@ def treinar_modelo():
     model = YOLO("yolov8n.pt") # Ele vai baixar o yolov8n.pt dentro da pasta dados_ia
     
     model.train(
-        data="data.yaml",               # Como o yaml está na mesma pasta que este script, basta o nome direto!
+        data='dados_ia/data.yaml',               # Como o yaml está na mesma pasta que este script, basta o nome direto!
         project="../resultados_ia",     # O "../" faz o YOLO voltar uma pasta e salvar na raiz do projeto
-        name="eco_modelo",
+        name="IDtrash_modelo",
         epochs=30,
-        imgsz=640,
         device="cpu",
-        workers=1,
         batch=8
     )
 
 if __name__ == "__main__":
-    treinar_modelo()
+    treinar_modelo() 

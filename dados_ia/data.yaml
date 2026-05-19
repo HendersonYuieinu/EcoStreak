@@ -3,9 +3,9 @@ path: .
 
 # Caminho para as imagens de treino e validação
 # Lista com os nomes de cada categoria
-train: train/images
-val: valid/images
-test: test/images
+train: dados_ia/train/images
+val: dados_ia/valid/images
+test: dados_ia/test/images
 
 # Número total de categorias que a IA vai aprender
 nc: 6
