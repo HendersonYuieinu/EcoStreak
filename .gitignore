@@ -1,0 +1,13 @@
+# Pastas de dados e resultados
+dados_ia/train/
+dados_ia/valid/
+dados_ia/test/
+resultados_ia/
+
+# Modelos treinados (arquivos .pt)
+*.pt
+
+# Cache e arquivos de sistema
+__pycache__/
+.env
+.DS_Store
