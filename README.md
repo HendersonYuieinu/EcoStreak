@@ -9,7 +9,7 @@ pip install ultralytics
 Dica para usar a placa de vídeo (RTX 3050): Para o treinamento ser mais rápido e usar a GPU, instale também o PyTorch com suporte a CUDA:
 
 ```Bash
-pip install torch torchvision torchaudio --index-url [https://download.pytorch.org/whl/cu118](https://download.pytorch.org/whl/cu118)
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 ```
 
 ### 2. Preparando o Banco de Imagens
