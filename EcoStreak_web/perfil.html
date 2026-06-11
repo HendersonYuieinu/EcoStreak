@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>EcoStreak - Perfil</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Estilos específicos para a página de perfil */
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+        .profile-avatar {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            border: 3px solid var(--primary);
+            object-fit: cover;
+        }
+        .profile-info h2 {
+            font-size: 1.3rem;
+            color: var(--text-main);
+            margin: 0;
+        }
+        .profile-info p {
+            color: var(--primary-dark);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+        
+        /* Grid de Estatísticas */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .stat-card {
+            background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+            border-radius: 12px;
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #bbf7d0;
+        }
+        .stat-card h3 {
+            font-size: 1.5rem;
+            color: var(--primary-dark);
+            margin: 0;
+        }
+        .stat-card p {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin: 0;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        /* Lista de Histórico */
+        .history-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .history-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .history-item:last-child {
+            border-bottom: none;
+        }
+        .history-item-name {
+            font-weight: 600;
+            color: var(--text-main);
+            text-transform: capitalize;
+        }
+        .history-item-points {
+            color: var(--primary-dark);
+            font-weight: 700;
+            background-color: #dcfce7;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="app-container">
+        <!-- Header do App -->
+        <header class="app-header">
+            <h1>Meu Perfil</h1>
+            <a href="#" style="font-size: 1.2rem; text-decoration: none;">⚙️</a>
+        </header>
+
+        <!-- Conteúdo Rolável -->
+        <div class="app-content">
+            
+            <!-- Cartão do Usuário -->
+            <div class="app-card" style="margin-top: 10px;">
+                <div class="profile-header">
+                    <img src="assets/icons/imagesss.png" alt="Avatar" class="profile-avatar" onerror="this.src='https://ui-avatars.com/api/?name=User&background=22c55e&color=fff'">
+                    <div class="profile-info">
+                        <h2>Eco Usuário</h2>
+                        <p>🌱 Nível: Reciclador Iniciante</p>
+                        <div class="coins-badge" style="display: inline-flex; margin-top: 8px;">🪙 30 EcoCoins</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Novo: Estatísticas de Impacto -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>10</h3>
+                    <p>Itens Reciclados</p>
+                </div>
+                <div class="stat-card">
+                    <h3>1.2kg</h3>
+                    <p>CO2 Poupado</p>
+                </div>
+            </div>
+
+            <!-- Cartão de Código de Descarte -->
+            <div class="app-card" style="background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%); border: none; text-align: center;">
+                <p style="color: #0284c7; margin-bottom: 8px; font-weight: 600;">Seu Código de Descarte</p>
+                <h2 style="font-size: 2rem; letter-spacing: 2px; color: #0369a1; margin-bottom: 8px;">EC0-7842</h2>
+                <p style="font-size: 0.85rem; color: #0c4a6e;">Apresente este código nos centros de coleta EcoStreak para acumular seus créditos.</p>
+            </div>
+
+            <!-- Cartão de Histórico -->
+            <div class="app-card">
+                <h2>Histórico Recente</h2>
+                <ul class="history-list">
+                    <li class="history-item">
+                        <span class="history-item-name">Plástico</span>
+                        <span class="history-item-points">+5 pts</span>
+                    </li>
+                    <li class="history-item">
+                        <span class="history-item-name">Papelão</span>
+                        <span class="history-item-points">+4 pts</span>
+                    </li>
+                    <li class="history-item">
+                        <span class="history-item-name">Orgânico</span>
+                        <span class="history-item-points">+2 pts</span>
+                    </li>
+                    <li class="history-item">
+                        <span class="history-item-name">Papel</span>
+                        <span class="history-item-points">+3 pts</span>
+                    </li>
+                </ul>
+                <button class="btn-mobile-outline" style="width: 100%; padding: 10px; margin-top: 12px; border-radius: 8px;">Ver histórico completo</button>
+            </div>
+
+            <!-- Opções Extras (Sair) -->
+            <div style="margin-top: 24px;">
+                <button class="btn-mobile-outline" style="color: #ef4444; border-color: #fca5a5;">Sair da Conta</button>
+            </div>
+
+        </div>
+
+        <!-- Barra de Navegação Inferior Ativa em "Perfil" -->
+        <nav class="bottom-nav">
+            <a href="index.html" class="nav-item">
+                <span class="nav-icon">🏠</span>
+                <span>Início</span>
+            </a>
+            <a href="camera.html" class="nav-item">
+                <span class="nav-icon">📷</span>
+                <span>Scanner</span>
+            </a>
+            <a href="aprendizado.html" class="nav-item">
+                <span class="nav-icon">📚</span>
+                <span>Aprender</span>
+            </a>
+            <a href="perfil.html" class="nav-item active">
+                <span class="nav-icon">👤</span>
+                <span>Perfil</span>
+            </a>
+        </nav>
+    </div>
+
+</body>
+</html>

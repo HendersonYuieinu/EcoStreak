@@ -1,0 +1,134 @@
+body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* justify-content: center; */
+            background-color: #f4f7f6;
+            background-image: linear-gradient(to bottom, rgba(201,238,255), rgba(132,205,236));
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        p {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: clamp(0.5rem, 1vw + 1vh, 1rem);
+        }   
+
+        h1 { color: #2e7d32; margin-bottom: 5px; }
+        #status { font-size: 22px; font-weight: bold; margin: 15px 0; color: #333; }
+        #dica { font-size: 16px; color: #666; text-align: center; max-width: 350px; margin-bottom: 20px; }
+        
+        /* Container que segura o vídeo ou o resultado da IA */
+        .view-container {
+            position: relative;
+            /* width: max-content; */
+            max-width: 100%;
+            /* height: max-content; */
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        video, img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        img {
+             display: none; 
+            } /* Começa escondido, só aparece com o resultado da IA */
+        
+        .imgcapted{
+            width: 40rem;
+            height: auto;
+            margin: auto;
+        }
+
+        #btn-capturar {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            border: 10px solid;
+            background-color: white;
+            color: rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.1s;
+        }
+
+        #btn-captured {
+            visibility: hidden;
+        }
+        #btn-capturar:active {
+            transform: translateX(-50%) scale(0.9); 
+            }
+        
+        #turn-facingmode-button {
+            position: absolute;
+            bottom: 25px;
+            right: 28vw;
+            z-index: 10vw;
+
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            border: solid;
+            background-color: rgba(200,200,200,0.80);
+            color: #333;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        #nav-container {
+            position: absolute;
+            bottom: 5rem;
+            left: 50%;
+            width: 100%;
+            transform: translateX(-50%);
+            display: flex;
+            justify-content: space-around;
+            /* border: 1px solid black; */
+
+        }
+
+        .btn-nav {
+    
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            background-color:rgba(56,171,228); /* Verde combinando com o título */
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            transition: transform 0.1s;
+        }
+
+        .btn-nav:active {
+            transform: scale(0.95);
+        }
+
+        #webcam {
+            /* transform: scaleX(-1);
+            -webkit-transform: scaleX(-1); */
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+        a {
+            margin-top: 2rem;
+        }
+    
+.espelhado {
+    transform: scaleX(-1);
+    -webkit-transform: scaleX(-1); /* Suporte para Safari/Webkits antigos */
+}

@@ -3,19 +3,14 @@ import cv2
 
 
 cap = cv2.VideoCapture(0)
-model = YOLO("yolov8n.pt")
-
-seguir = False
+model = YOLO(r"runs\resultados5_ia\IDtrash_modelo-2\weights\best.pt")
 
 while True:
     succes, img = cap.read()
     
     if succes:
         img = cv2.flip(img, 1)
-        if seguir:
-            results = model.track(img, persist=True)
-        else:
-            results = model(img)
+        results = model(img)
         
         for result in results:
             img = result.plot()

@@ -1,0 +1,235 @@
+:root {
+    --primary: #22c55e;        /* Verde iOS/Android Moderno */
+    --primary-dark: #16a34a;
+    --primary-light: #f0fdf4;
+    --bg-app: #f8fafc;         /* Fundo cinza bem claro/limpo de app */
+    --card-bg: #ffffff;
+    --text-main: #0f172a;      /* Slate escuro para melhor leitura */
+    --text-muted: #64748b;
+    --accent-yellow: #eab308;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-tap-highlight-color: transparent; /* Remove o flash azul ao tocar no mobile */
+}
+
+body {
+    background-color: #e2e8f0; /* Fundo externo (só aparece no PC) */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Container que simula o Celular */
+.app-container {
+    width: 100%;
+    max-width: 450px; /* Largura padrão de um smartphone grande */
+    height: 100vh;
+    background-color: var(--bg-app);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+}
+
+/* No celular real, ocupa tudo perfeitamente sem bordas externas */
+@media (max-width: 450px) {
+    body { background-color: var(--bg-app); }
+    .app-container { height: 100vh; max-width: 100%; box-shadow: none; }
+}
+
+/* Header Superior Estilo App */
+.app-header {
+    background-color: var(--card-bg);
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.app-header h1 {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--primary-dark);
+    letter-spacing: -0.5px;
+}
+
+.coins-badge {
+    background-color: #fef9c3;
+    color: #854d0e;
+    padding: 6px 12px;
+    border-radius: 9999px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    border: 1px solid #fef08a;
+}
+
+/* Área de Conteúdo Rolável (Simula o scroll do app) */
+.app-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    padding-bottom: 90px; /* Espaço para não cobrir o conteúdo com a barra inferior */
+}
+
+/* Cartões com Estilo de App (Cards) */
+.app-card {
+    background-color: var(--card-bg);
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+    border: 1px solid #f1f5f9;
+}
+
+.app-card h2 {
+    font-size: 1.1rem;
+    color: var(--text-main);
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.app-card p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+
+/* Botões Estilo Mobile (Grandes e fáceis de tocar) */
+.btn-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 16px;
+    background-color: var(--primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.2);
+}
+
+.btn-mobile:active {
+    transform: scale(0.97);
+    background-color: var(--primary-dark);
+}
+
+.btn-mobile-outline {
+    background-color: transparent;
+    color: var(--text-main);
+    border: 2px solid #e2e8f0;
+    box-shadow: none;
+}
+.btn-mobile-outline:active {
+    background-color: #f1f5f9;
+    transform: scale(0.97);
+}
+
+/* Barra de Navegação Inferior (Bottom Nav Bar) */
+.bottom-nav {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 68px;
+    background-color: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-top: 1px solid #e2e8f0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: env(safe-area-inset-bottom); /* Suporte para a barra inferior do iPhone */
+    z-index: 10;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    font-weight: 600;
+    gap: 4px;
+    flex: 1;
+    text-align: center;
+}
+
+.nav-item.active {
+    color: var(--primary-dark);
+}
+
+.nav-icon {
+    font-size: 1.3rem;
+}
+
+/* Customizações da Câmera Mobile */
+.mobile-camera-wrapper {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    border-radius: 24px;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.mobile-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.mobile-capture-trigger {
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background-color: white;
+    border: 6px solid var(--primary);
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    cursor: pointer;
+}
+.mobile-capture-trigger:active {
+    transform: translateX(-50%) scale(0.9);
+}
+
+/* Badges de Lixeiras no Resultado */
+.badge-lixeira {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 30px;
+    color: white;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-top: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Informações Legais Compactas no Fundo do App */
+.app-footer {
+    text-align: center;
+    padding: 10px 0 30px 0;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}

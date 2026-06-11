@@ -1,0 +1,74 @@
+body {
+    margin: 0;
+}
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* border: 1px solid black; */
+    height: 100vh;
+    /* background-color: rgba(204,255,124); */
+    background-image: linear-gradient(rgba(204,255,124)80%, rgba(159,225,29));
+}
+
+#iconbnc {
+    display: flex;
+    justify-self: center;
+    width: 200px;
+    border-radius: 5rem;
+
+    animation: flutuar 3s ease-in-out infinite;
+}
+
+
+#balao-fala {
+    display: flex;
+    justify-content: center;
+    max-width: 15rem;
+    /* background-color: white; */
+    background-image: linear-gradient(white 60%, rgba(255, 255, 255, 0.568));
+    box-shadow: 0px 4px 10px 1px rgb(140, 200, 24);
+    border-radius: 0.8rem;
+    padding: 2%;
+    margin: 1rem;
+    font-size: larger;
+    text-align: center;
+}
+
+button {
+    display: flex;
+    justify-self: center;
+    padding: 10%;
+    font-size: large;
+    /* background-color: rgba(56,171,228); */
+    background-image: linear-gradient(rgb(51, 150, 199), rgba(56, 171, 228, 0.776));
+    box-shadow: 0px 5px 30px 0.01px rgb(140, 200, 90);
+    color: white;
+    border: none;
+    border-radius: 10rem;
+    transition: 0.2s ease;
+}
+
+button:hover{
+    /* background-color: rgb(48, 150, 201); */
+    background-color: rgba(56,171,228);
+}
+
+button:active{
+    transform: scale(0.9);
+}
+
+/* animacoes */
+@keyframes flutuar {
+        0% {
+            transform:  translateY(0);
+        }
+        50% {
+            transform: translateY(-5px)
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+

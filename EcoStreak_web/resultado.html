@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Resultado - EcoStreak</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <header class="app-header">
+            <h1>Análise do Resíduo</h1>
+            <a href="index.html" style="color: var(--text-muted); text-decoration: none; font-weight: 600; font-size: 0.9rem;">Sair</a>
+        </header>
+
+        <div class="app-content">
+            <div class="app-card" style="text-align: center; padding: 12px;">
+                <img id="img-resultado" src="" alt="Objeto analisado" style="width: 100%; height: 240px; object-fit: cover; border-radius: 12px; background-color: #eee;">
+                
+                <h2 id="objeto-nome" style="margin-top: 16px; font-size: 1.4rem;">Identificando...</h2>
+                <div id="lixeira-tag" class="badge-lixeira" style="background-color: #64748b;">Processando</div>
+                
+                <p id="dica-texto" style="margin-top: 16px; font-size: 0.95rem; text-align: left; background-color: #f1f5f9; padding: 12px; border-radius: 8px;"></p>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 10px;">
+                <a href="camera.html" class="btn-mobile">📸 Tirar Outra Foto</a>
+                <a href="index.html" class="btn-mobile btn-mobile-outline">🏠 Voltar ao Menu Principal</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const dadosSalvos = localStorage.getItem("resultadoIA");
+            if (!dadosSalvos) {
+                window.location.href = "index.html";
+                return;
+            }
+
+            const data = JSON.parse(dadosSalvos);
+            document.getElementById("objeto-nome").innerText = data.objeto || "Objeto não identificado";
+            document.getElementById("dica-texto").innerText = data.dica || "Certifique-se de limpar o recipiente antes de descartar para evitar contaminação.";
+            
+            if (data.imagem_base64) {
+                document.getElementById("img-resultado").src = `data:image/jpeg;base64,${data.imagem_base64}`;
+            }
+
+            const tagLixeira = document.getElementById("lixeira-tag");
+            const lixeira = data.lixeira || "Geral";
+            tagLixeira.innerText = `${lixeira}`;
+
+            // Define as cores vibrantes padrão de reciclagem internacional
+            if (lixeira.includes("Vermelha")) tagLixeira.style.backgroundColor = "#ef4444";
+            else if (lixeira.includes("Verde")) tagLixeira.style.backgroundColor = "#22c55e";
+            else if (lixeira.includes("Azul")) tagLixeira.style.backgroundColor = "#3b82f6";
+            else if (lixeira.includes("Marrom")) tagLixeira.style.backgroundColor = "#78350f";
+            else if (lixeira.includes("Amarela")) tagLixeira.style.backgroundColor = "#eab308";
+            else tagLixeira.style.backgroundColor = "#64748b";
+
+            // Limpa para a próxima rodada
+            localStorage.removeItem("resultadoIA");
+        });
+    </script>
+</body>
+</html>

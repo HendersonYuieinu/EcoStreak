@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Bem-vindo - EcoStreak</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Fundo e Container exclusivos para a introdução */
+        .intro-bg {
+            background: linear-gradient(135deg, #dcfce7 0%, #f0fdf4 100%);
+            display: flex;
+            align-items: center; /* Centraliza na vertical */
+            justify-content: center; /* Centraliza na horizontal */
+            padding: 24px;
+        }
+
+        .intro-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 320px; /* Mantém o conteúdo agrupado e bonito */
+        }
+
+        /* Animação do mascote flutuando */
+        @keyframes flutuar {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .mascote-intro {
+            width: 180px;
+            height: auto;
+            object-fit: contain;
+            animation: flutuar 3s ease-in-out infinite;
+            margin-bottom: 24px;
+        }
+
+        /* Balão de Fala Moderno */
+        .balao-fala {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 24px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(34, 197, 94, 0.15);
+            position: relative;
+            margin-bottom: 30px;
+            border: 2px solid var(--primary-light);
+            width: 100%;
+        }
+
+        /* Triângulo do balão apontando para o mascote */
+        .balao-fala::before {
+            content: '';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 0 12px 12px 12px;
+            border-style: solid;
+            border-color: transparent transparent var(--card-bg) transparent;
+        }
+
+        /* Indicador de passos (Bolinhas) */
+        .dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 30px;
+        }
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #cbd5e1;
+            transition: all 0.3s ease;
+        }
+        .dot.active {
+            background-color: var(--primary);
+            width: 24px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Container principal (substitui o app-content para centralizar tudo) -->
+    <div class="app-container intro-bg">
+        
+        <div class="intro-content">
+            <!-- Mascote -->
+            <img id="iconbnc" src="assets/tungtungsahur.png" alt="Mascote EcoStreak" class="mascote-intro">
+
+            <!-- Balão de Fala -->
+            <div class="balao-fala">
+                <p id="texto" style="font-size: 1.1rem; color: var(--text-main); font-weight: 600; line-height: 1.5; margin: 0;"></p>
+            </div>
+
+            <!-- Indicadores de Passo -->
+            <div class="dots" id="dots-container">
+                <div class="dot active"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+
+            <!-- Botão de Ação -->
+            <button onclick="button_prox()" class="btn-mobile" id="btn-prox">Próximo</button>
+        </div>
+
+    </div>
+
+    <script src="js/intro.js"></script>
+</body>
+</html>

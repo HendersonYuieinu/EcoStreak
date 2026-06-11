@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>EcoStreak - Aprender</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Estilos específicos para deixar os cards de aprendizado mais vivos */
+        .learn-card {
+            border-left: 6px solid #64748b;
+            transition: transform 0.2s;
+        }
+        .learn-card:active {
+            transform: scale(0.98);
+        }
+        .card-plastic { border-left-color: #ef4444; }
+        .card-paper { border-left-color: #3b82f6; }
+        .card-glass { border-left-color: #22c55e; }
+        .card-metal { border-left-color: #eab308; }
+        .card-organic { border-left-color: #78350f; }
+        
+        .color-dot {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 6px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="app-container">
+        <!-- Header do App -->
+        <header class="app-header">
+            <h1>Guia de Reciclagem</h1>
+            <div class="coins-badge">💡 Dicas</div>
+        </header>
+
+        <!-- Conteúdo Rolável -->
+        <div class="app-content">
+            
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 16px; text-align: center;">
+                Descubra como separar cada resíduo corretamente para garantir seus pontos.
+            </p>
+
+            <!-- Card: Plástico -->
+            <div class="app-card learn-card card-plastic">
+                <h2 style="color: #ef4444;"><span class="color-dot" style="background-color: #ef4444;"></span>Plástico</h2>
+                <p><strong>O que descartar:</strong> Garrafas PET, sacolas, potes de comida, tampas e embalagens de xampu.</p>
+                <p style="margin-top: 8px; font-size: 0.8rem; color: #b91c1c;">⚠️ <strong>Dica de ouro:</strong> Lave ou limpe os potes antes de descartar para não atrair insetos e não estragar outros materiais.</p>
+            </div>
+
+            <!-- Card: Papel -->
+            <div class="app-card learn-card card-paper">
+                <h2 style="color: #3b82f6;"><span class="color-dot" style="background-color: #3b82f6;"></span>Papel e Papelão</h2>
+                <p><strong>O que descartar:</strong> Caixas de papelão, jornais, revistas, cadernos velhos e folhas impressas.</p>
+                <p style="margin-top: 8px; font-size: 0.8rem; color: #1d4ed8;">⚠️ <strong>Dica de ouro:</strong> Não amasse os papéis até virarem bolinhas rígidas, apenas dobre ou rasgue para facilitar a triagem.</p>
+            </div>
+
+            <!-- Card: Metal -->
+            <div class="app-card learn-card card-metal">
+                <h2 style="color: #eab308;"><span class="color-dot" style="background-color: #eab308;"></span>Metal</h2>
+                <p><strong>O que descartar:</strong> Latinhas de refrigerante ou cerveja, latas de conserva (milho, extrato de tomate) e papel alumínio limpo.</p>
+            </div>
+
+            <!-- Card: Vidro -->
+            <div class="app-card learn-card card-glass">
+                <h2 style="color: #22c55e;"><span class="color-dot" style="background-color: #22c55e;"></span>Vidro</h2>
+                <p><strong>O que descartar:</strong> Garrafas, copos, potes de conserva e frascos de perfume.</p>
+                <p style="margin-top: 8px; font-size: 0.8rem; color: #15803d;">⚠️ <strong>Atenção:</strong> Se o vidro estiver quebrado, embale-o dentro de uma caixa ou garrafa PET cortada para proteger os coletores.</p>
+            </div>
+
+            <!-- Card: Orgânico -->
+            <div class="app-card learn-card card-organic">
+                <h2 style="color: #78350f;"><span class="color-dot" style="background-color: #78350f;"></span>Orgânico</h2>
+                <p><strong>O que descartar:</strong> Restos de alimentos, cascas de frutas e legumes, pó de café e folhas secas.</p>
+            </div>
+
+            <!-- Rodapé Legal Interno -->
+            <div class="app-footer">
+                <p>© 2026 EcoStreak App</p>
+                <p>Educação Ambiental • Ajude o Planeta</p>
+            </div>
+        </div>
+
+        <!-- Barra de Navegação Inferior Ativa em "Aprender" -->
+        <nav class="bottom-nav">
+            <a href="index.html" class="nav-item">
+                <span class="nav-icon">🏠</span>
+                <span>Início</span>
+            </a>
+            <a href="camera.html" class="nav-item">
+                <span class="nav-icon">📷</span>
+                <span>Scanner</span>
+            </a>
+            <a href="aprendizado.html" class="nav-item active">
+                <span class="nav-icon">📚</span>
+                <span>Aprender</span>
+            </a>
+            <a href="perfil.html" class="nav-item">
+                <span class="nav-icon">👤</span>
+                <span>Perfil</span>
+            </a>
+        </nav>
+    </div>
+
+</body>
+</html>

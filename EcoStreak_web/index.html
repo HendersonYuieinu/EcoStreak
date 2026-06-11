@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>EcoStreak - Início</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <!-- Header fixo do App -->
+        <header class="app-header">
+            <h1>EcoStreak</h1>
+            <div class="coins-badge">🪙 30 EcoCoins</div>
+        </header>
+
+        <!-- Conteúdo Rolável -->
+        <div class="app-content">
+            
+            <!-- Mensagem de Boas-vindas -->
+            <div style="margin-bottom: 20px;">
+                <h2 style="color: var(--text-main); font-size: 1.5rem;">Olá, Eco Reciclador! 👋</h2>
+                <p style="color: var(--text-muted); font-size: 0.95rem;">Pronto para reduzir sua pegada de carbono hoje?</p>
+            </div>
+
+            <!-- Card Principal de Ação (Scanner) -->
+            <div class="app-card" style="background: linear-gradient(135deg, #dcfce7 0%, #bffdbd 100%); border: none; box-shadow: 0 10px 25px rgba(34, 197, 94, 0.2);">
+                <h2 style="color: var(--primary-dark); font-size: 1.3rem;">Scanner Inteligente</h2>
+                <p style="color: #166534; margin-bottom: 16px;">Tire foto de qualquer embalagem ou resíduo para saber onde descartar instantaneamente.</p>
+                <a href="camera.html" class="btn-mobile">📷 Escanear Lixo</a>
+            </div>
+
+            <!-- Gamificação: Meta da Semana -->
+            <div class="app-card">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <h2 style="margin: 0;">Meta da Semana</h2>
+                    <span style="font-weight: bold; color: var(--primary-dark); font-size: 0.9rem;">10/15</span>
+                </div>
+                <p style="margin-bottom: 12px; font-size: 0.85rem;">Faltam 5 descartes corretos para você ganhar um bônus de moedas!</p>
+                
+                <!-- Barra de Progresso Visual -->
+                <div style="background: #e2e8f0; border-radius: 999px; height: 10px; width: 100%; overflow: hidden;">
+                    <div style="background: var(--primary); height: 100%; width: 66%; border-radius: 999px; transition: width 0.5s ease;"></div>
+                </div>
+            </div>
+
+            <!-- Dica do Dia -->
+            <div class="app-card" style="background-color: #fffbeb; border-color: #fde68a;">
+                <h2 style="color: #b45309; display: flex; align-items: center; gap: 8px;">
+                    <span>💡</span> Dica do Dia
+                </h2>
+                <p style="color: #92400e; font-size: 0.9rem;">Você sabia? Uma única lata de alumínio reciclada economiza energia suficiente para manter uma TV ligada por 3 horas ininterruptas!</p>
+            </div>
+
+            <!-- Centros Próximos -->
+            <div class="app-card">
+                <h2 style="display: flex; align-items: center; gap: 8px;">
+                    <span>📍</span> Centros de Coleta
+                </h2>
+                <p style="margin-bottom: 12px; font-size: 0.9rem;">Leve seus materiais reciclados aos pontos parceiros e ganhe créditos.</p>
+                
+                <!-- Local 1 -->
+                <div style="background: #f1f5f9; padding: 12px; border-radius: 8px; margin-bottom: 8px; display: flex; align-items: center; gap: 10px;">
+                    <div style="background: white; padding: 8px; border-radius: 50%; font-size: 1.2rem;">🏢</div>
+                    <div>
+                        <h3 style="font-size: 0.95rem; color: var(--text-main); margin-bottom: 2px;">Centro EcoGuia</h3>
+                        <p style="font-size: 0.8rem; color: var(--text-muted);">Av. Principal, 123</p>
+                    </div>
+                </div>
+                
+                <!-- Local 2 -->
+                <div style="background: #f1f5f9; padding: 12px; border-radius: 8px; display: flex; align-items: center; gap: 10px;">
+                    <div style="background: white; padding: 8px; border-radius: 50%; font-size: 1.2rem;">🌳</div>
+                    <div>
+                        <h3 style="font-size: 0.95rem; color: var(--text-main); margin-bottom: 2px;">Ponto Verde</h3>
+                        <p style="font-size: 0.8rem; color: var(--text-muted);">Rua das Flores, 456</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rodapé Legal dentro do fluxo do App -->
+            <div class="app-footer">
+                <p>© 2026 EcoStreak App</p>
+                <p>Termos de Uso • Políticas de Privacidade • Legal</p>
+            </div>
+        </div>
+
+        <!-- Barra de Navegação Inferior (Bottom Nav) -->
+        <nav class="bottom-nav">
+            <a href="index.html" class="nav-item active">
+                <span class="nav-icon">🏠</span>
+                <span>Início</span>
+            </a>
+            <a href="camera.html" class="nav-item">
+                <span class="nav-icon">📷</span>
+                <span>Scanner</span>
+            </a>
+            <a href="aprendizado.html" class="nav-item">
+                <span class="nav-icon">📚</span>
+                <span>Aprender</span>
+            </a>
+            <a href="perfil.html" class="nav-item">
+                <span class="nav-icon">👤</span>
+                <span>Perfil</span>
+            </a>
+        </nav>
+    </div>
+
+</body>
+</html>

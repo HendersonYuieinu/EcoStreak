@@ -1,0 +1,223 @@
+body {
+    /* background-color: rgba(132,205,236); */
+    /* background-color: rgba(201,238,255); */
+    background-image: linear-gradient(to bottom, rgba(201,238,255), rgba(132,205,236));
+    height: 100vh;
+    margin: 0;
+    /* background-color: rgba(204,255,124); */
+}
+
+main {
+    height: max-content;
+    /* border: 1px solid red; */
+    padding: 2%;
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: clamp(0.5rem, 1vw + 1vh, 1rem);
+}
+
+*::-webkit-scrollbar{
+    width: 1vw;
+    height: 1vh;
+}
+*::-webkit-scrollbar-track{
+    /* background-color: rgb(227, 243, 191); */
+    border-radius: 10px;
+}
+
+*::-webkit-scrollbar-thumb{
+    background-color: rgba(56,171,228);
+    border-radius: 10px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background-color: #333;
+}
+
+.navigatorbar {
+    /* background-color: #f0f0f0; */
+    align-items: center;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 10vh;
+    /* border: 1px solid blue; */
+    }
+    
+.nav_text {
+    color: #333;
+    font-size: clamp(1rem, 3vw + 1vh, 2rem);
+    margin: 5px 10px;
+    }
+
+.nav_links {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2%;
+    margin: 0;
+    }
+
+.nav_item {
+    height: 5vh;
+}
+
+#site-info {
+    /* border: 1px solid black; */
+    display: flex;
+    font-weight: bold;
+    align-items: center;
+    width: min-content;
+    top: 0;
+    left: 0;
+}
+
+#coins-info {
+    display: flex;
+    align-items: center;
+    /* border: 1px solid black; */
+    background-color: rgb(245, 211, 126);
+    width: max-content;
+    padding: 0.5rem;
+    border-radius: 10rem;
+}
+
+#coins-info p {
+    font-size: clamp(1rem, 3vw + 3vh, 2rem);
+}
+
+.abas {
+    height: 100%;
+    width: 100%;
+    list-style: none;
+    /* display: flex;
+    flex-direction: column; */
+    padding: 0;
+}
+
+.abas li {
+    margin-bottom: 1vh;
+}
+
+.aba {
+    /* background-color: rgba(241,255,205); */
+    /* background-color: rgba(255, 255, 255, 0.582); */
+    background-image: linear-gradient(rgba(255, 255, 255) 20%, rgba(255, 255, 255, 0.429) 90%);
+    /* background-color: rgba(241,255,205); */
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px 0.01px grey;
+    padding: 1%;
+}
+
+    /* conta */
+#account-aba {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    /* justify-content: space-between; */
+    /* border: 1px solid black; */
+    border-radius: 10px;
+    }
+
+#account-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#codigo-div {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-self: center;
+    width: max-content;
+    align-items: center;
+    border-radius: 8px;
+    padding: 3%;
+    background-image: linear-gradient(rgba(132, 205, 236, 0.786)40%, rgb(132, 205, 236)80%);
+}
+#codigo-div p {
+    margin: 0;
+}
+
+#account-aba img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    }
+
+#ofensive {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    /* background-color: rgba(56,171,228); */
+    /* background-color: rgb(236, 224, 49); */
+    font-weight: bold;
+    border-radius: 10rem;
+    padding: 0.5rem;
+    width: max-content;
+    /* border: 1px solid black; */
+    justify-content: center;
+    font-size: clamp(1rem, 1vw + 2vh, 2rem);
+    
+}
+/*  */
+
+/* historico aba */
+#historico-aba{
+    /* border: 1px solid blue; */
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#historico-aba ul {
+    list-style: none;
+    padding: 0;
+    overflow-y: scroll;
+}
+
+#historico-aba ul li {
+    /* border: 1pqx solid orange; */
+    display: flex;
+    padding: 1px;
+    /* background-color: rgba(132,205,236); */
+    background-image: linear-gradient(rgba(132, 205, 236, 0.786)40%, rgb(132, 205, 236)80%);
+    /* background-color: rgba(159,225,29); */
+    margin-top: 0.5px;
+    padding-left: 2%;
+    padding-right: 2%;
+    border-radius: 8px;
+}
+
+.point {
+    display: flex;
+    margin-left: auto;
+}
+
+/*  */
+button {
+    display: flex;
+    justify-self: center;
+    padding: 14px 15px;
+    font-size: large;
+    /* background-color: rgba(56,171,228); */
+    background-image: linear-gradient(rgb(50, 147, 195), rgba(56, 171, 228, 0.882));
+    box-shadow: 0px 2px 10px 0.01px grey;
+    color: white;
+    border: none;
+    border-radius: 10rem;
+    transition: 0.2s ease;
+}
+
+button:hover{
+    /* background-color: rgb(48, 150, 201); */
+    background-color: rgba(56,171,228);
+}
+
+button:active{
+    transform: scale(0.9);
+}

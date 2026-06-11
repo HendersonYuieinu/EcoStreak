@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>EcoStreak - Scanner</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <!-- Header do App -->
+        <header class="app-header">
+            <h1>EcoStreak Scanner</h1>
+            <div id="status" style="font-size: 0.85rem; font-weight: 600; color: var(--text-muted);">Pronto</div>
+        </header>
+
+        <!-- Área do Visor da Câmera -->
+        <div class="app-content" style="padding: 12px; display: flex; flex-direction: column; overflow: hidden;">
+            
+            <div class="mobile-camera-wrapper" style="flex: 1; position: relative; border-radius: 20px; overflow: hidden; background-color: #000;">
+                <video id="webcam" class="mobile-video" autoplay playsinline style="width: 100%; height: 100%; object-fit: cover;"></video>
+                
+                <!-- Botão de Captura Flutuante (Círculo Branco) -->
+                <button id="btn-capturar" class="mobile-capture-trigger"></button>
+                
+                <!-- Botão de Alternar Câmera (Flutuando no canto superior direito do visor) -->
+                <button id="turn-facingmode-button" onclick="alternarcamera()" style="position: absolute; top: 16px; right: 16px; background: rgba(0,0,0,0.5); border: none; color: white; width: 40px; height: 40px; border-radius: 50%; font-size: 1.1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 20; backdrop-filter: blur(4px);">🔄</button>
+                <!-- Dentro do mobile-camera-wrapper, adicione isso logo abaixo do botão de alternar câmera -->
+                <button id="btn-upload-trigger" style="position: absolute; top: 70px; right: 16px; background: rgba(0,0,0,0.5); border: none; color: white; width: 40px; height: 40px; border-radius: 50%; font-size: 1.1rem; cursor: pointer; z-index: 20; backdrop-filter: blur(4px);" onclick="document.getElementById('file-input').click()">📁</button>
+
+                <!-- Adicione o input escondido antes do fechamento do app-container -->
+                <input type="file" id="file-input" accept="image/*" style="display: none;"> 
+            </div>
+
+            <div id="dica" style="text-align: center; margin-top: 12px; font-size: 0.85rem; color: var(--text-muted); min-height: 32px;">
+                Aponte para o lixo e toque no botão branco.
+            </div>
+        </div>
+
+        <!-- Barra de Navegação Inferior de App -->
+        <nav class="bottom-nav">
+            <a href="index.html" class="nav-item">
+                <span class="nav-icon">🏠</span>
+                <span>Início</span>
+            </a>
+            <a href="camera.html" class="nav-item active">
+                <span class="nav-icon">📷</span>
+                <span>Scanner</span>
+            </a>
+            <a href="aprendizado.html" class="nav-item">
+                <span class="nav-icon">📚</span>
+                <span>Aprender</span>
+            </a>
+            <a href="perfil.html" class="nav-item">
+                <span class="nav-icon">👤</span>
+                <span>Perfil</span>
+            </a>
+        </nav>
+    </div>
+
+    <canvas id="canvas" style="display: none;"></canvas>
+    <script src="js/camera.js"></script>
+</body>
+</html>
